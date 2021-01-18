@@ -1,48 +1,29 @@
-import React, { useState, useEffect } from "react";
-import * as API from "./utils/API";
+import React from "react";
 import "./App.css";
 
-function App() {
-  const [developerState, setDeveloperState] = useState({
-    excitementLevel: 0,
-    lifeLongLearner: true,
-    mood: "",
-    name: ""
-  });
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Wrapper from "./components/Wrapper";
 
-  useEffect(() => {
-    // For demonstration purposes, we mock an API call.
-    API.getDeveloper.then((res) => {
-      setDeveloperState(res);
-      console.log("Developer State:");
-      console.log(developerState);
-    });
-  }, []);
+import Signup from "./pages/Signup";
+import Search from "./pages/Search";
 
+const App = () => {
+  document.title = "Wikipedia Searcher";
   return (
-    <div className="card">
+    <Router>
       <div>
-        Name: {developerState.name}
+        <Navbar />
+        <Wrapper>
+          <Route exact path="/" component={Search} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/search" component={Search} />
+        </Wrapper>
+        <Footer />
       </div>
-      <div>
-        Status: {developerState.mood}
-      </div>
-      <div>
-        Lifelong learner: {developerState.lifeLongLearner.toString()}
-      </div>
-      <div>
-        Excitement Level: {developerState.excitementLevel}
-      </div>
-      <div className="btn-group">
-        <button onClick={() => setDeveloperState({ ...developerState, mood: "lazy" })} className="btn btn-danger">
-          Encourage Laziness
-        </button>
-        <button onClick={() => setDeveloperState({ ...developerState, mood: "determined" })} className="btn btn-success">
-          Fill with Determination
-        </button>
-      </div>
-    </div>
+    </Router>
   );
-}
+};
 
 export default App;
