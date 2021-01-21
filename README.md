@@ -1,21 +1,19 @@
-In this activity we will practice using the useState and useEffect Hooks in React by transforming a stateful class component into a functional component with React Hooks.
+In this activity we will practice using Custom Hooks by creating a `useDebounce` Hook that will delay the invoking of a function for a given number of milliseconds.
 
-# Instructions
+  # Instructions
 
-* Replace your React application's src folder with [Unsolved/src](Unsolved/src).
+  * Replace your React application's src folder with [Unsolved/src](Unsolved/src).
 
-* If you created a new React app, you will need to install axios and React Router.
+  * Start the application in dev mode by running `npm start` in your terminal.
 
-* Start the application in dev mode by running `npm start` in your terminal.
+  * Open your browser to [localhost:3000](http://localhost:3000) and study the rendered application.
 
-* Open your browser to [localhost:3000](http://localhost:3000) and study the rendered application.
+  * Update this application to accomplish the following:
 
-* Update this application to accomplish the following:
+  * Create a new Custom Hook called `useDebounce` that takes in the two parameters `value` and `delay`.
 
-* In `pages/Search/index.js`, Create a functional component in place of the class component.
+  * Use `setTimeout` to handle the value of the debouncer.
 
-* Replace `this.state` and all instances of `this.setState` using the `useState` Hook.
+  * Update the `Search` page so that the useEffect Hook is listening for the value returned from the `useDebounce` Hook. Pass in a `delay` value of 500.
 
-* Replace all component lifecycle methods with their Hook counterparts.
-
-* Remove the search button and utilize the `useEffect` Hook to query every time the user inputs anything into the search bar. 
+  * The finished application should only search for a new article if there has been a period of 500 milliseconds without any user input.
