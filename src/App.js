@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (

@@ -4,9 +4,11 @@ import Container from "../../components/Container";
 import SearchForm from "../../components/SearchForm";
 import SearchResults from "../../components/SearchResults";
 import Alert from "../../components/Alert";
+import useDebounce from "../../useDebounce";
 
 function Search() {
-  const [search, setSearch] = useState("Wikipedia");
+  // const [search, setSearch] = useState("Wikipedia");
+  const [search, setSearch] = useDebounce("wikepedia", 5000);
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [error, setError] = useState("");
