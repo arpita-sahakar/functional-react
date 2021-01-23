@@ -4,7 +4,7 @@ import CardTitleText from "../CardTitleText";
 
 function CardTitle() {
   return (
-    <div className="heading">
+    <div className="blue text-center">
       <CardTitleText />
     </div>
   );

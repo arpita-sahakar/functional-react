@@ -4,7 +4,7 @@ import "./style.css";
 function Footer() {
   return (
     <footer className="footer">
-      <span>Wikipedia Searcher</span>
+      <span>LinkedUp { new Date().getFullYear() }</span>
     </footer>
   );
 }

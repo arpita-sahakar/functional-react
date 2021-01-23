@@ -1,26 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Signup from "./pages/Signup";
-import Search from "./pages/Search";
+import Gallery from "./pages/Gallery";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
-import "./App.css";
-import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Navbar />
-        <Wrapper>
-          <Route exact path="/" component={Search} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/search" component={Search} />
-        </Wrapper>
-        <Footer />
-      </div>
-    </Router>
+    <div>
+      <Navbar />
+      <Wrapper>
+        <Gallery />
+      </Wrapper>
+      <Footer />
+    </div>
   );
 }
 
